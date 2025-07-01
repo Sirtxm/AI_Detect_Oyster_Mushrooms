@@ -23,4 +23,4 @@ for img_path in val_images:
     if lbl_path.exists():
         shutil.move(str(lbl_path), val_lbl / lbl_path.name)
 
-print(f"✅ แบ่ง val สำเร็จ: {val_count} ไฟล์")
+print(f"✅ : {val_count} ")

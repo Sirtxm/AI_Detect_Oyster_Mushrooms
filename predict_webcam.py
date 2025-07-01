@@ -1,12 +1,12 @@
 from ultralytics import YOLO
 
-# โหลดโมเดลที่ฝึกเสร็จแล้ว
+# Load the trained YOLOv8 model
 model = YOLO("runs/detect/yolov8-oyster/weights/best.pt")
 
-# เปิดกล้องและเริ่มพยากรณ์แบบ real-time
+# Open the webcam and start real-time prediction
 model.predict(
-    source=0,        # กล้อง webcam
-    show=True,       # แสดงภาพพร้อมกรอบวัตถุ
-    conf=0.4,        # ความมั่นใจขั้นต่ำ
-    save=False       # ไม่เซฟภาพผลลัพธ์
+    source=0,        # 0 = webcam (use 1 or 2 if multiple cameras are connected)
+    show=True,       # Show the video with bounding boxes
+    conf=0.4,        # Minimum confidence threshold for detections
+    save=False       # Do not save the output images
 )
